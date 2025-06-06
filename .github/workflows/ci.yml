@@ -3,6 +3,14 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: docker-compose up --abort-on-container-exit
+    steps:                # <-- Indentation fixed here
+      - uses: actions/checkout@v4
+      # Install Docker Compose
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+      # ...your other steps...
+      - name: Run all tests
+        run: docker-compose up --abort-on-container-exit
+# ...existing code...
