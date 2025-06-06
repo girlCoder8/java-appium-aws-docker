@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mobile:
+    build: ./mobile
+  web:
+    build: ./web
+  api:
+    build: ./api
+  ai:
+    build: ./ai
+    environment:
+      - AWS_ACCESS_KEY_ID=your-access-key
+      - AWS_SECRET_ACCESS_KEY=your-secret-key
+      - OTHER_SECRET=your-value

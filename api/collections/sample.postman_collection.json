@@ -1,0 +1,61 @@
+{
+  "info": {
+    "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+    "name": "Sample API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get User Info",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.example.com/users/1",
+          "protocol": "https",
+          "host": [
+            "api",
+            "example",
+            "com"
+          ],
+          "path": [
+            "users",
+            "1"
+          ]
+        },
+        "description": "Retrieves information for user with ID 1."
+      },
+      "response": []
+    },
+    {
+      "name": "Create New User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}"
+        },
+        "url": {
+          "raw": "https://api.example.com/users",
+          "protocol": "https",
+          "host": [
+            "api",
+            "example",
+            "com"
+          ],
+          "path": [
+            "users"
+          ]
+        },
+        "description": "Creates a new user with the provided name and email."
+      },
+      "response": []
+    }
+  ]
+}

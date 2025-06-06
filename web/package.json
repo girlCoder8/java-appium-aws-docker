@@ -1,0 +1,10 @@
+{
+  "name": "web-tests",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.1",
+  "typescript": "^5.0.0"
+  }
+}
