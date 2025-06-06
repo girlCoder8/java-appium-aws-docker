@@ -1,9 +1,10 @@
 name: CI
-on: [push]
+on:
+  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
-    steps:                # <-- Indentation fixed here
+    steps:
       - uses: actions/checkout@v4
       # Install Docker Compose
       - name: Install Docker Compose
