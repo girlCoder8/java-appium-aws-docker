@@ -1,0 +1,5 @@
+# Python requirements for AI test prioritization and anomaly detection
+pandas
+joblib
+scikit-learn
+numpy
