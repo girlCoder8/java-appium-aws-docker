@@ -1,10 +1,18 @@
-# Java Appium AWS Docker Automation Framework
+# Java Appium AWS Docker AI Automation Framework
 
 This project provides a comprehensive, containerized automation framework for web, mobile, API, and AI-driven test prioritization. It leverages Java + Appium for mobile testing, Playwright for web testing, Postman/Newman for API testing, and Python for AI-based test prioritization, all orchestrated via Docker Compose.
 
 ---
 
-## Features
+ ## 🧠 AI/ML
+- Test case prioritization via Random Forest model
+- Flaky test detection from execution logs
+- Anomaly detection on test metrics
+- Test data generation using Faker
+
+---
+
+## 🚀 Features
 
 - **Mobile Automation:** Java, Appium, Selenium, and TestNG for iOS mobile app testing.
 - **Web Automation:** Playwright (TypeScript) for cross-browser web UI testing.
@@ -32,6 +40,12 @@ This project provides a comprehensive, containerized automation framework for we
 .
 ├── ai/                # AI test prioritization (Python)
 │   ├── Dockerfile
+│   ├── anomaly_detector.py # Anomaly detection on test metrics
+│   ├── data_generator.py  # Test data generation using Faker
+│   ├── flaky_detector.py  # Flaky test detection from execution logs
+│   ├── metadata.csv    # Test metadata for AI prioritization
+│   ├── sample_logs.csv # Flaky test detection from execution logs
+│   ├── sample_metrics.csv # Anomaly detection on test metrics
 │   ├── model.pkl
 │   └── prioritizer.py
 ├── api/               # API automation (Postman/Newman)
@@ -60,8 +74,7 @@ This project provides a comprehensive, containerized automation framework for we
 │   ├── package.json
 │   ├── playwright.config.ts
 │   └── tests/
-│       └── login.spec.ts
-├── metadata.csv       # Test metadata for AI prioritization
+│       └── login.spec.ts      
 ├── docker-compose.yml # Orchestration for all services
 ├── .env               # Environment variables (not committed)
 ├── .gitignore         # Git ignore rules
@@ -116,7 +129,7 @@ env_file:
   - .env
 ```
 
-### 3. Build and Run All Services
+### 3.  🐳  Build and Run All Services
 
 ```sh
 docker-compose up --build
@@ -132,7 +145,7 @@ This will build and start the following containers:
 
 ## Component Details
 
-### Mobile Automation (`mobile/`)
+### ✅ Mobile Automation (`mobile/`)
 
 - **Tech:** Java, Appium, Selenium, TestNG, Maven
 - **Entry Point:** `src/test/java/com/example/tests/`
@@ -143,7 +156,7 @@ This will build and start the following containers:
   ```
   Or via Docker Compose as above.
 
-### Web Automation (`web/`)
+### 🌍 Web Automation (`web/`)
 
 - **Tech:** Playwright, TypeScript, Node.js
 - **Entry Point:** `tests/login.spec.ts`
@@ -155,7 +168,7 @@ This will build and start the following containers:
   ```
   Or via Docker Compose as above.
 
-### API Automation (`api/`)
+### 🧪 API Automation (`api/`)
 
 - **Tech:** Postman, Newman
 - **Entry Point:** `collections/sample.postman_collection.json`
@@ -166,7 +179,7 @@ This will build and start the following containers:
   ```
   Or via Docker Compose as above.
 
-### AI Test Prioritization (`ai/`)
+### 🧠 AI Test Prioritization (`ai/`)
 
 - **Tech:** Python, pandas, joblib
 - **Entry Point:** `prioritizer.py`
@@ -180,12 +193,21 @@ This will build and start the following containers:
 
 ---
 
-## Continuous Integration
+## 🔁 Continuous Integration
 
 - **GitHub Actions:** See [`.github/workflows/ci.yml`](.github/workflows/ci.yml) for CI configuration.
 - **CI Command:** Runs `docker-compose up --abort-on-container-exit` on each push.
 
 ---
+
+## 📊 Dashboard Usage
+### Run locally with Streamlit:
+
+```bash
+pip install streamlit pandas joblib scikit-learn faker
+cd automation-framework/dashboard
+streamlit run dashboard.py
+```
 
 ## Customization
 

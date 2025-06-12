@@ -1,0 +1,5 @@
+test_name,status
+TestCase_1,pass
+TestCase_1,fail
+TestCase_2,pass
+TestCase_2,pass
