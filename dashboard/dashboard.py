@@ -19,7 +19,7 @@ if metadata_file:
 
 # Flaky test analysis
 st.header("2. Flaky Test Detection")
-log_file = st.file_uploader("Upload sample_logs.csv", type=["csv"])
+log_file = st.file_uploader("Upload logs.csv", type=["csv"])
 if log_file:
     log_df = pd.read_csv(log_file)
     flaky_df = log_df.groupby("test_name")["status"].value_counts(normalize=True).unstack().fillna(0)
@@ -29,7 +29,7 @@ if log_file:
 
 # Anomaly detection
 st.header("3. Anomaly Detection")
-metrics_file = st.file_uploader("Upload sample_metrics.csv", type=["csv"])
+metrics_file = st.file_uploader("Upload metrics.csv", type=["csv"])
 if metrics_file:
     from sklearn.ensemble import IsolationForest
     met_df = pd.read_csv(metrics_file)
